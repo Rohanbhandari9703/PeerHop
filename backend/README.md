@@ -1,212 +1,130 @@
-🚀 PeerHop
-Gesture-Driven Local Sharing for Smart Campuses & Workspaces
+# 🚀 PeerHop
+### Gesture-Driven Local Sharing for Smart Campuses & Workspaces
 
-PeerHop is a lightweight, system-tray based application that enables touch-free, gesture-controlled sharing of text, files, and images between devices connected to the same local network.
+PeerHop is a lightweight, system-tray based application that enables **touch-free, gesture-controlled sharing of text, files, and images** between devices connected on the same local network.
 
-Designed for smart campuses, offices, labs, and hackathons, PeerHop removes the friction of traditional sharing methods by combining computer vision, local networking, and secure user approvals — all without requiring internet access.
+Built for **smart campuses, offices, labs, and collaborative environments**, PeerHop eliminates the friction of traditional sharing methods by combining **computer vision, local networking, and explicit user consent** — all without requiring internet access.
 
-🎯 Vision & Purpose
+---
 
-In classrooms, libraries, and collaborative workspaces, sharing small pieces of data often becomes unnecessarily complex — emails, pen drives, messaging apps, logins, and cloud uploads.
+## 🎯 Vision & Purpose
 
-PeerHop rethinks this interaction.
+In classrooms, libraries, and shared workspaces, quick data sharing often becomes unnecessarily complicated due to emails, pen drives, logins, or cloud uploads.
 
-By using simple hand gestures and local peer discovery, users can instantly exchange content with nearby devices in a fast, private, and intuitive way.
+**PeerHop simplifies this experience.**
 
-What PeerHop Solves
+Using intuitive hand gestures and local peer discovery, users can instantly exchange content with nearby devices in a **fast, private, and natural way**.
 
-❌ No internet dependency
+### What PeerHop Solves
+- ❌ No internet dependency  
+- ❌ No sign-ups or pairing steps  
+- ❌ No cloud storage or cables  
+- ✅ Gesture-based, local, instant sharing  
 
-❌ No sign-ups or pairing steps
+---
 
-❌ No cloud storage or cables
+## 🧠 Design Philosophy
 
-✅ Just gestures + local network
+PeerHop is built around **proximity-first collaboration**:
 
-🧠 Design Philosophy
+- Devices automatically discover peers on the same LAN  
+- Transfers are triggered intentionally using gestures  
+- Every data transfer requires explicit user approval  
 
-PeerHop is built around proximity-based collaboration:
+This ensures **speed without compromising safety or privacy**.
 
-Devices discover each other automatically over LAN
+---
 
-Transfers are triggered intentionally via gestures
+## ⚙️ System Architecture & Approach
 
-Every transfer requires explicit user approval
+### Core Concepts
+- Gesture recognition as the primary interaction method  
+- Temporary local hosting for data transfer  
+- Decentralized peer discovery over LAN  
 
-This ensures speed without sacrificing safety.
+### Technical Challenges Addressed
+- Real-time hand gesture recognition  
+- Zero-configuration peer discovery  
+- Secure, consent-based file transfers  
+- Low-overhead background execution  
 
-⚙️ System Approach
-Core Ideas
+### Key Innovations
+- Hotkey-triggered webcam pipeline for gesture detection  
+- Ephemeral FastAPI server launched only during transfers  
+- UDP broadcasting for automatic peer discovery  
+- Pop-up confirmation to prevent accidental sharing  
 
-Gesture recognition as the primary input mechanism
+---
 
-Temporary, on-demand local hosting for transfers
+## 🛠️ Technology Stack
 
-Decentralized peer discovery within the same network
+### Core Technologies
 
-Key Technical Challenges Addressed
+- **Programming Language:** Python 3.10  
+- **UI / Tray Interface:** Tkinter  
+- **Gesture Recognition:** MediaPipe + OpenCV  
+- **Local Server:** FastAPI  
+- **Networking:** UDP broadcasting over LAN  
+- **Clipboard & File Handling:** Native OS utilities  
 
-Real-time and reliable hand gesture detection
+---
 
-Peer discovery without central servers
+## ✨ Features
 
-Secure, consent-based data transfer
+- ✋ **Gesture-based copy & paste**
+  - ASL “3” → Copy data  
+  - Open palm → Paste / receive data  
 
-Lightweight background execution (tray application)
+- ⌨️ **Hotkey controlled**
+  - Activate via `Ctrl + M`  
 
-Notable Innovations
+- 🌐 **LAN-only operation**
+  - Works completely offline  
+  - No cloud or external servers  
 
-Hotkey-activated webcam pipeline for gesture detection
+- 🔐 **User-centric security**
+  - Approval prompt before every transfer  
+  - Temporary servers only during active sessions  
 
-Ephemeral FastAPI server spun up only during transfers
+- 📂 **Multi-format support**
+  - Text, files, images, screenshots  
 
-UDP-based broadcasting for zero-configuration peer discovery
+- 🖥️ **Background execution**
+  - Runs silently from the system tray  
 
-Confirmation pop-ups to prevent accidental sharing
+---
 
-🛠️ Technology Stack
-Core Components
+## 📽️ Demo
 
-UI / Tray Interface: Tkinter
-
-Gesture Recognition: MediaPipe + OpenCV
-
-Local Backend Server: FastAPI
-
-Networking: UDP broadcasting over LAN
-
-Clipboard & File Handling: Native OS utilities
-
-Language: Python 3.10
-
-✨ Features
-
-✋ Gesture-based copy & paste
-
-ASL “3” → Copy content
-
-Open palm → Paste / receive content
-
-⌨️ Hotkey controlled
-
-Activate via Ctrl + M
-
-🌐 Fully local
-
-Works entirely over LAN
-
-No internet required
-
-🔐 User-first security
-
-Approval prompt before every transfer
-
-Temporary servers only during active sessions
-
-📂 Multi-format support
-
-Text, files, images, screenshots
-
-🖥️ Always available
-
-Runs silently in the system tray
-
-📽️ Demo
-
-🎥 Demo Video:
+🎥 **Demo Video:**  
 https://youtu.be/jmeGnu144DU
 
-🧪 Installation & Setup
-Prerequisites
+---
 
-Python 3.10
+## 🧪 Installation & Setup
 
-pip
+### Prerequisites
+- Python 3.10  
+- pip  
 
-Required Libraries
+### Dependencies
+- TensorFlow  
+- MediaPipe  
+- OpenCV  
+- FastAPI  
+- Tkinter  
 
-TensorFlow
+### Setup Instructions
 
-MediaPipe
-
-OpenCV
-
-FastAPI
-
-Tkinter
-
-Setup Steps
+```bash
 # Clone the repository
-git clone https://github.com/rohanbhandari9703/PeerHop.git
+git clone https://github.com/HarshitJain2103/PeerHop.git
 
-# Navigate into the project directory
+# Navigate to the project directory
 cd PeerHop
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Launch the application
+# Run the application
 python main.py
-
-📦 Data Handling Behavior
-
-Text: Copied directly to the system clipboard
-
-Files & Images: Saved to
-
-PeerHopDownloads/
-
-
-on the receiver’s machine
-
-🔒 Privacy & Security Model
-
-PeerHop is built with privacy by design:
-
-Transfers occur only after sender approval
-
-No persistent servers — everything is temporary
-
-No external APIs or cloud storage involved
-
-No data leaves the local network
-
-🧬 Future Enhancements
-
-📊 Smart Classroom Dashboard
-
-View anonymized, non-sensitive usage statistics
-
-🔐 Stronger Encryption Layer
-
-For enterprise and institutional deployments
-
-🌍 Cross-Platform Support
-
-Linux and macOS compatibility
-
-🧑‍💼 Admin Control Mode
-
-Central enable/disable for lab or office machines
-
-📎 Credits & Acknowledgements
-
-MediaPipe by Google
-
-FastAPI
-
-OpenCV
-
-All contributors and testers who helped refine PeerHop
-
-📜 License
-
-This project is released under a custom license.
-
-❗ Commercial use, redistribution, or modification without explicit permission from the author is strictly prohibited.
-Please refer to the full license file for detailed terms.
-
-🏁 Closing Note
-
-PeerHop was created to make human gestures a first-class input method for digital collaboration.
-From classrooms to hackathons, it demonstrates how computer vision and local networking can come together to create faster, safer, and more natural interactions.
